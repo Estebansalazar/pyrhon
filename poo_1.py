@@ -21,13 +21,34 @@ class Coche():
         self.__enmarcha=arrancamos
 
         if(self.__enmarcha):
+            chequeo=self.__chequeo_interno()
+
+        if(self.__enmarcha and chequeo):
             return "el coche esta en marcha"
+
+        elif(self.__enmarcha and chequeo==false):
+            return "algo a ido mal en el chequeo"
+
         else:
             return "el coche está varado \n"
 
 #el metodo estado nos proporciona el estado de nuestro objeto
     def estado (self):
         print("El coche tiene %s"%(self.__ruedas)," ruedas. Un largo de %s"%(self.__largoChasis), " y un largo de chasis de %s"%(self.__anchoChasis),"\n")
+
+        #__ encapsulamos el metodo, al hacer esto el método no
+        #será llamado desde fuera
+    def __chequeo_interno(self):
+        print("realizando chequeo interno")
+        sel.gazolina="ok"
+        self.aceite="ok"
+        self.puertas="cerradas"
+
+        if(self.gazolina=="ok" and self.aceite=="ok" and sel.puertas=="cerradas"):
+            return True
+        else:
+            return False
+
 
 
 #instanciamos nuestra clase
