@@ -29,7 +29,14 @@ class Empleado (Persona):
 
         self.antiguedad=antiguedad
 
+    def descripcion (self):
+
+        #OBTENEMOS el método descripción del metodo padre
+        super().descripcion()
+
+        print ("Salario: $",self.salario, "\n antiguedad: ",self.antiguedad)
+
     
 
-Antonio = Empleado (2312423,12)
+Antonio = Empleado (2312423,12, "antonio",23,"Las condes 512")
 Antonio.descripcion()
